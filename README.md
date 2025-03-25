@@ -485,5 +485,5 @@ The **U-Net model demonstrated a clear advantage** over traditional segmentation
      ```
    - For Part C and D:
      - Open the notebook segmentation.ipynb in the environment of your choice (Preferably kaggle).
-     - The notebook has three cells. Ensure the `input_dir`, `output_dir` and `gt_dir` in the second cell and third cell are set correctly. The input folders have been uploaded as part of this repo, kindly ensure that the paths are set accordingly.
+     - The notebook has three cells. Ensure the `input_dir`, `output_dir` and `gt_dir` in the second cell and third cell are set correctly. Follow the dataset downloading instructions mentioned above to get the inout data before running.
 
