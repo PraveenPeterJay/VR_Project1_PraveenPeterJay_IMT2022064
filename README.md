@@ -8,8 +8,9 @@ For this project, we developed computer vision solutions to classify and segment
 
 ## Dataset
 - A labeled dataset containing images of people with and without face masks can be accessed here (for Parts A and B): [Face Mask Detection Dataset](https://github.com/chandrikadeb7/Face-Mask-Detection/tree/master/dataset)
+  - Download the `dataset` folder into `Part-A-and-B` before execution. 
 - A Masked Face Segmentation Dataset with ground truth face masks can be accessed here (for Parts C and D): [Masked Face Segmentation Dataset](https://github.com/sadjadrz/MFSD)
-
+  - Download the `MSFD` folder into `Part-C-and-D` before execution.
 ## Part A: Binary Classification with Handcrafted Features and ML Classifiers
 
 ### Methodology Overview
