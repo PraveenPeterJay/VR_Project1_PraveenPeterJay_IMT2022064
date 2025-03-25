@@ -1,0 +1,10 @@
+
+Classification Report for Model 3:
+              precision    recall  f1-score   support
+
+Without Mask       0.98      0.97      0.98       386
+   With Mask       0.97      0.98      0.98       433
+
+    accuracy                           0.98       819
+   macro avg       0.98      0.98      0.98       819
+weighted avg       0.98      0.98      0.98       819
