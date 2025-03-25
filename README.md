@@ -104,7 +104,6 @@ Accuracy - 0.91
 ![image](https://github.com/user-attachments/assets/a7b7227f-93f8-48e5-9b5d-eed1f4c54374) ![image](https://github.com/user-attachments/assets/1a2d6722-3ee2-4c3e-b69c-a5165ea9d7f4)
 
 
-- ANN slightly outperformed SVM due to its capability to learn non-linear patterns effectively.
 
 ### Observations and Analysis
 - **Feature Engineering Impact**: Handcrafted features provided meaningful representations but were limited in capturing complex mask variations.
@@ -112,7 +111,7 @@ Accuracy - 0.91
   - SVM performed well but struggled with non-linear separability.
   - ANN demonstrated flexibility and superior performance due to its hierarchical feature learning.
 - **Challenges and Issues**:
-  - **Feature Selection Complexity**: Identifying the right combination of handcrafted features required extensive experimentation and domain knowledge.
+  - **Feature Selection Complexity**: Identifying the right combination of handcrafted features required extensive experimentation.
   - **High Dimensionality**: Extracted features could lead to increased dimensionality, requiring dimensionality reduction techniques such as PCA.
   - **Overfitting**: ANN models required dropout and batch normalization to prevent overfitting due to high feature variability.
   - **Computational Cost**: Feature extraction and SVM training were computationally expensive, particularly for large datasets.
@@ -230,6 +229,7 @@ Applied data augmentation to improve model generalization:
   - **Computational Power**: Training deep CNNs requires significant GPU resources, making it difficult to train on limited hardware.
   - **Hyperparameter Sensitivity**: CNN performance is highly dependent on learning rate, optimizer choice, and network depth.
   - **Black-Box Nature**: Unlike handcrafted feature-based methods, CNNs lack interpretability, making it harder to understand decision-making processes.
+  - **Debugging**: The models took around two hours to train and give output, so any small modifications to the code took additional time and made the process tedious at times.
 
 
 ---
@@ -321,8 +321,8 @@ The findings suggest that deep learning methods, particularly CNNs, are more sui
 - **Challenges and Issues:**
   - **Lighting Variations:** Changes in lighting conditions affected thresholding and clustering performance.
   - **Occlusions:** Objects covering parts of the face caused misclassifications in segmentation.
-  - **Different Mask Materials:** Some masks had patterns and designs containing varied colours, making the task chanllenging.
-  - **Image quality:** Certain angles, color similarities between masks and backgrounds, and low-resolution images introduced challenges in accurate segmentation
+  - **Different Mask Materials:** Some masks had patterns and designs containing varied colours, making the task challenging.
+  - **Image quality:** Certain angles, color similarities between masks and backgrounds, and low-resolution images introduced challenges in accurate segmentation.
 
 ## Part D: Mask Segmentation Using U-Net
 
@@ -387,24 +387,16 @@ The findings suggest that deep learning methods, particularly CNNs, are more sui
 - Save segmentation comparisons (`comparison_{filename}.png`) for manual inspection.
 
 ---
-### **Challenges and Potential Improvements**
-**Data-Related Challenges**
-- **Class Imbalance:**
-  - Solution: Implement weighted loss functions (e.g., Dice Loss) to handle class imbalance.
-- **Low-Quality Masks:**
-  - Solution: Use morphological operations (erosion/dilation) to refine masks.
-
+### **Challenges**
 **Model Limitations**
 - **Overfitting on Training Data:**
-  - Solution: Increase dropout rate, introduce L2 regularization.
+  - To avoid this, we increased the dropout rate, and introduced L2 regularization.
 - **Loss of Fine Details in Small Objects:**
-  - Solution: Utilize attention mechanisms (e.g., Attention U-Net) to improve segmentation of finer mask edges.
+  - We utilized attention mechanisms (e.g., Attention U-Net) to improve segmentation of finer mask edges.
 
 **Computational Constraints**
-- **Memory Consumption Due to Large Models:**
-  - Solution: Reduce U-Net depth or apply mixed precision training.
 - **Training Time on Large Datasets:**
-  - Solution: Use data augmentation to artificially increase dataset size without increasing storage.
+  - We used data augmentation to artificially increase dataset size without increasing storage.
 ---
 
 
@@ -481,9 +473,13 @@ The **U-Net model demonstrated a clear advantage** over traditional segmentation
 4. To run the code:
    - For Part A and B:
      ```bash
+     cd Part-A-and-B
      python SVM_ANN_CNN.py
      ```
    - For Part C and D:
+     ```bash
+     cd Part-C-and-D
+     ```
      - Open the notebook segmentation.ipynb in the environment of your choice (Preferably kaggle).
      - The notebook has three cells. Ensure the `input_dir`, `output_dir` and `gt_dir` in the second cell and third cell are set correctly. Follow the dataset downloading instructions mentioned above to get the inout data before running.
 
