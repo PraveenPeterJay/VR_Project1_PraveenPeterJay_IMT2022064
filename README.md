@@ -300,10 +300,17 @@ The findings suggest that deep learning methods, particularly CNNs, are more sui
 
 ---
 ### Results
+50 images were randomly picked from the dataset.
 | Metric | Value |
 |--------|------|
-| Average IoU | 0.5876 |
-| Average Dice Score | 0.7287 |
+| Average IoU | 0.5459 |
+| Average Dice Score | 0.6909 |
+|Min IoU | 0.2121|
+|Max IoU| 0.8879
+|Min Dice | 0.3500|
+|Max Dice | 0.9406|
+|Standard Deviation IoU | 0.1680 |
+|Standard Deviation Dice | 0.1423 |
 ---
 ### Observations and Analysis
 - Traditional methods performed decently but lacked precision.
@@ -438,8 +445,8 @@ The findings suggest that deep learning methods, particularly CNNs, are more sui
 #### Part C vs. Part D
 | Metric | Part C (Traditional) | Part D (U-Net) |
 |--------|----------------------|----------------|
-| Average IoU | 0.5876 | 0.8730 |
-| Average Dice Score | 0.7287 | 0.9273 |
+| Average IoU | 0.5459 | 0.8730 |
+| Average Dice Score | 0.6909 | 0.9273 |
 
 **1. IoU and Dice Score Improvement:**  
    - U-Net **significantly outperformed traditional methods**, achieving a much higher **IoU (0.8730 vs. 0.5876) and Dice score (0.9273 vs. 0.7287)**.  
@@ -463,30 +470,19 @@ The **U-Net model demonstrated a clear advantage** over traditional segmentation
 ## How to Run the Code
 1. Install dependencies:
    ```bash
-   pip install tensorflow numpy matplotlib pandas opencv-python tqdm scikit-learn
+   pip install numpy opencv-python scikit-learn tensorflow matplotlib seaborn mediapipe scikit-image
    ```
 2. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/image-segmentation.git
-   cd image-segmentation
+   git clone https://github.com/PraveenPeterJay/VR_Project1_PraveenPeterJay_IMT2022064.git
    ```
 3. Download the dataset and update the `base_dir` in the script.
-4. Run the corresponding script for each part:
-   - For Part A:
+4. To run the code:
+   - For Part A and B:
      ```bash
-     python classify_ml.py
+     python SVM_ANN_CNN.py
      ```
-   - For Part B:
-     ```bash
-     python train_cnn.py
-     ```
-   - For Part C:
-     ```bash
-     python segment_traditional.py
-     ```
-   - For Part D:
-     ```bash
-     python train_unet.py
-     ```
-5. The trained model and segmentation outputs will be saved in `segmented_outputs/`.
+   - For Part C and D:
+     - Open the notebook segmentation.ipynb in the environment of your choice (Preferably kaggle).
+     - The notebook has three cells. Ensure the `input_dir`, `output_dir` and `gt_dir` in the second cell and third cell are set correctly. The input folders have been uploaded as part of this repo, kindly ensure that the paths are set accordingly.
 
