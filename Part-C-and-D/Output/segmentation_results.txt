@@ -1,0 +1,9 @@
+Mask Segmentation Results
+========================
+Total images processed: 50
+Average IoU (Jaccard Index): 0.5459
+Average Dice Score: 0.6909
+Min IoU: 0.2121, Max IoU: 0.8879
+Min Dice: 0.3500, Max Dice: 0.9406
+Standard Deviation IoU: 0.1680
+Standard Deviation Dice: 0.1423
